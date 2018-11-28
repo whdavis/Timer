@@ -1,10 +1,8 @@
-local ITERATIONS = 1e8
+local wait = assert(require("wait"))
 
 local timer = Timer.new()
-local n = 0
+print("Waiting...")
 timer:start()
-for i = 1, ITERATIONS do
-	n = n + i
-end
+wait(3)
 timer:stop()
 print(string.format("Time elapsed: %f", timer:count()))
