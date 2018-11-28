@@ -9,9 +9,14 @@ extern "C" {
 
 class Timer {
 public:
-	
+	Timer();
+	~Timer();
+	void start();
+	void stop();
+	double count() const;
 private:
-	
+	std::chrono::high_resolution_clock::time_point start_time;
+	std::chrono::high_resolution_clock::time_point finish_time;
 };
 
 #endif

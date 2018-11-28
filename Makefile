@@ -11,7 +11,7 @@ all: Test Debug
 
 Debug: Timer.o main.o
 	$(CC) $(FLAGS) $(DEBUG) \
-		main.o -o $@ \
+		Timer.o main.o -o $@ \
 		$(INCLUDE) \
 		$(LUA_FLAGS)
 
