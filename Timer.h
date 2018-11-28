@@ -25,13 +25,20 @@ int lua_Timer_delete(lua_State* L);
 int lua_Timer_start(lua_State* L);
 int lua_Timer_stop(lua_State* L);
 int lua_Timer_count(lua_State* L);
+int lua_Timer_newindex(lua_State* L);
+int lua_Timer_table_newindex(lua_State* L);
 void lua_Timer_register(lua_State* L);
 
 const luaL_Reg Timer_methods[] {
+	{"start", lua_Timer_start},
+	{"stop", lua_Timer_stop},
+	{"count", lua_Timer_count},
 	{nullptr, nullptr}
 };
 
 const luaL_Reg Timer_metamethods[] {
+	{"__gc", lua_Timer_delete},
+	{"__newindex", lua_Timer_newindex},
 	{nullptr, nullptr}
 };
 
